@@ -32,9 +32,14 @@ const FoodDetails = () => {
   const { data, isError, isLoading } = useItemDetailsQuery(id);
 
   const handleOnRating = (e, rating, id) => {
-    console.log(rating);
-    updateRating({ id, rating });
-    setValue(rating);
+    if (rating === null) {
+      setValue(0);
+      result.isSuccess = false;
+      toast.error('Stars in empty');
+    } else {
+      updateRating({ id, rating });
+      setValue(rating);
+    }
   };
 
   return (

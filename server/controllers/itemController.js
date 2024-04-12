@@ -26,6 +26,7 @@ export const getAllItems = asyncCatchError(async (req, res, next) => {
 
 export const getItemDetails = asyncCatchError(async (req, res, next) => {
   const item = await Item.findById(req.params.id);
+
   if (!item) {
     return next(new ErrorHandler('Item Not Found', 400));
   }
@@ -37,6 +38,13 @@ export const updateRating = async (req, res, next) => {
   try {
     const item = await Item.findById(req.params.id);
 
+    console.log(req.params.rating);
+
+    if (req.params.rating === undefined || req.params.rating === null) {
+      req.params.rating = 1;
+    }
+    console.log(req.params.rating, 34);
+
     if (!item) {
       return next(new ErrorHandler('Item Not Found', 400));
     }
@@ -44,6 +52,7 @@ export const updateRating = async (req, res, next) => {
     const rating = item.rating.find((rate) => {
       return rate.user._id.toString() === req.user._id.toString();
     });
+
     if (rating) {
       item.rating.forEach((i) => {
         if (i.user._id.toString() === req.user._id.toString()) {
