@@ -1,0 +1,99 @@
+@import "colors";
+
+.confirmorder{
+
+    background: $bg;
+    width: 100%;
+    height: 70vh;
+
+    >main{
+        height: 100%;
+        background-color: white;
+        max-width: 900px;
+        margin: auto;
+        padding: 2rem;
+
+        >h1{
+            text-align: center;
+            text-transform: uppercase;
+            margin: 3rem;
+            font:100 3rem "Roboto";
+        }
+        >form{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+
+            
+            div{
+                display: flex;
+                justify-content:space-between ;
+                align-items: center;
+                width: 70%;
+                padding: 0.8rem 1em;
+                align-items: center;
+                background-color: rgb(233,233,233);
+                margin: 0.5rem;
+               >label{
+                padding: 0.6rem;
+                white-space: nowrap;
+               }
+
+            
+
+            }
+
+            
+            button{
+                background-color: $orange;
+                padding: 0.5rem;
+                border-radius: 5px;
+                border: none;
+                font-size: 1rem;
+                color: white;
+                &:hover{
+
+                    background-color: $darkorange;
+                    color: black;
+                    cursor: pointer;
+                }
+            }
+
+
+
+
+    }
+    }}
+
+    @media screen and (max-width:600px) {
+
+        .confirmorder{
+            main{
+    
+                form{
+                   
+    
+                    
+                div{
+    
+                    width: 100%;
+
+                    
+                }
+    
+                button{
+                    
+                    width: 100%;
+                    margin:  3rem auto;
+                    
+           
+                    
+                }
+                }
+    
+    
+            }
+        }
+        
+    }

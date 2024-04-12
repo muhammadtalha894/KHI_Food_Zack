@@ -1,0 +1,75 @@
+@import "colors";
+
+.orderdetails{
+
+    background:$bg;
+    width: 100%;
+    >main{
+        background-color: white;
+        margin: auto;
+        max-width: 900px;
+        padding: 2rem;
+        overflow-x: auto;
+
+        >h1{
+            text-transform: uppercase;
+            text-align: center;
+            font:100 3rem "Roboto";
+            margin: 3rem;
+        }
+
+        >div{
+
+            text-align: center;
+            margin: 2rem 0;
+            >h1{
+                font-size: 1.8rem;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                
+            }
+
+           
+            >p{
+                font-weight: 200;
+                white-space: nowrap;
+                font-weight: 100;
+                margin: 0.7rem;
+                letter-spacing: 2px;
+
+                >strong{
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        >article {
+
+            >div{
+                display: flex;
+                align-items: center;
+             justify-content: space-between;
+             background-color: rgba(128, 128, 128, 0.381);
+             padding: 1rem 2rem;
+             margin: 1rem;
+             text-align: center;
+             border-radius: 5px;
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width:600px) {
+    .orderdetails >main >div {
+        h1{
+            font-size: 1.4rem;
+        }
+        >p{
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            
+        }
+    }
+    
+}
