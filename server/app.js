@@ -45,7 +45,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 connectPassport();
-
+app.use('/', (req, res) => {
+  res.send('hello');
+});
 app.use('/api/v1', userRoute);
 app.use('/api/v1', orderRouter);
 app.use('/api/v1', itemRoute);
